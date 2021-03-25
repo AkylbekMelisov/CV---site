@@ -48,7 +48,7 @@ class SkillSerializers(serializers.ModelSerializer):
 
 class SkillCreateSerializer(Serializer):
     name = serializers.CharField(max_length=50)
-    star = serializers.IntegerField(max_valie=5, min_value=0)
+    star = serializers.IntegerField(max_value=5, min_value=0)
 
 
 class LanguageSerializer(serializers.ModelSerializer):
@@ -77,4 +77,4 @@ class ResumeSerializer(serializers.ModelSerializer):
     languages = LanguageSerializer(many=True, required=False)
     class Meta:
         model = Resume
-        fields = '__all__'
+        fields = ['full_name', 'birth_date', 'email', 'phone', 'address', 'github_account', 'photo', 'experiences', 'educations', 'skills', 'languages']
