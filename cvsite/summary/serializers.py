@@ -48,7 +48,7 @@ class SkillSerializers(serializers.ModelSerializer):
 
 class SkillCreateSerializer(Serializer):
     name = serializers.CharField(max_length=50)
-    star = serializers.IntegerField()
+    star = serializers.IntegerField(max_valie=5, min_value=0)
 
 
 class LanguageSerializer(serializers.ModelSerializer):
