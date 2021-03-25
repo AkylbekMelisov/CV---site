@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Resume(models.Model):
+    photo = models.ImageField(blank=True, null=True, default='photo.jpg')
     full_name = models.CharField(max_length=40)
     birth_date = models.DateField()
     email = models.EmailField()
